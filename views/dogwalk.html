@@ -1,0 +1,54 @@
+<%- include('header.html') -%>
+
+<!-- modal animation -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<section class="dogwalk margin-x">
+    <h1 class="text-center">Как проходит выгул?</h1>
+    <div class="row-space-between">
+        <img src="woman-walk.png" width="448" height="640">
+        <div>
+            <div class="steps">
+                <div class="flex text-center-mobile flex-wrap-mobile">
+                    <h1>1</h1>
+                    <p>Выгульщик приходит за собакой. Если вас нет дома — неcтрашно: <span onclick="openWindow()">вот как можно передать ключи</span>.</p>
+                </div>
+                <div class="flex text-center-mobile flex-wrap-mobile">
+                    <h1>2</h1>
+                    <p>Надеваем безопасную экипировку, включаем GPS-трекер. Гуляем и развлекаем собаку 45 минут или другое
+                        оговоренное время.</p>
+                </div>
+                <div class="flex text-center-mobile flex-wrap-mobile">
+                    <h1>3</h1>
+                    <p>Возвращаемся домой: обязательно моем лапки и оставляем корм.</p>
+                </div>
+                <div class="flex text-center-mobile flex-wrap-mobile">
+                    <h1>4</h1>
+                    <p>Готовим для хозяина отчет с фото, GPS-треком и рассказом, как все прошло.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include('order-steps.html') -%>
+</section>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function openWindow() {
+        Swal.fire({
+            html: 'Если вас нет дома, есть несколько способов передать питомца. Вот самые популярные:<br><br>1) Попросить соседей или консьержа открыть дверь или передать ключи;<br>2) Дать запасной ключ выгульщику или сервису;<br> 3) Спрятать ключ.',
+            showClass: {
+                popup: 'animate__animated animate__faster animate__slideInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__faster animate__fadeOutUp'
+            },
+            confirmButtonText: 'Понятно',
+            confirmButtonColor: 'var(--button-color)',
+            background: 'var(--background-color)',
+            color: 'var(--text-color)',
+        })
+    }
+</script>
+
+<%- include('footer.html') -%>

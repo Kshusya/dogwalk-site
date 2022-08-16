@@ -1,0 +1,35 @@
+<footer>
+    <div class="flex-contacts">
+        <div>Задайте свой вопрос:</div>
+        <div class="text-center">
+            <a class="btn" href="tel:88005553535">+7 (800) 555-35-35</a>
+            <a class="btn" href="mailto:sobaka@example.com">sobaka@example.com</a>
+        </div>
+    </div>
+    <div class="links">
+        <ul class="flex-wrap-mobile">
+            <li><a href="/contacts">Контакты</a></li>
+            <li><a href="#termsofuse">Пользовательское соглашение</a></li>
+            <li><a href="#agencycontract">Агентский договор</a></li>
+            <li><a href="#privacypolicy">Политика конфиденциальности</a></li>
+            <li>© 2022 Выгул собак</li>
+            <li>
+                <p class="btn text-center" id="themeSwitcher">Тёмная тема</p>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+<script>
+    const themeSwitcher = document.getElementById("themeSwitcher");
+    themeSwitcher.onclick = function () {
+        const currentTheme = document.documentElement.getAttribute("data-theme");
+        const switchToTheme = currentTheme === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", switchToTheme);
+        localStorage.setItem("theme", switchToTheme);
+    };
+</script>
+
+</body>
+
+</html>

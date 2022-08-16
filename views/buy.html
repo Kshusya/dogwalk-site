@@ -1,0 +1,58 @@
+<%- include('header.html') -%>
+
+<section class="buy text-center">
+    <form action="/buy" method="POST">
+        <h1>Оставьте заявку</h1>
+        <select class="form" name="service" required="required">
+            <option value="">Выберите услугу</option>
+            <option value="1">Выгул</option>
+            <option value="2">Передержка</option>
+            <option value="3">Няня</option>
+            <option value="4">Кинолог</option>
+        </select>
+
+        <h3>Пол питомца</h3>
+        <input type="radio" id="girl" name="gender" value="girl" checked>
+        <label for="girl">девочка</label><br>
+        <input type="radio" id="boy" name="gender" value="boy">
+        <label for="boy">мальчик</label><br>
+
+        <h3>Порода питомца*</h3>
+        <input type="text" class="form" name="breed" id="breed" required="required">
+
+        <h3>Возраст питомца*</h3>
+        <input type="text" class="form" name="age" id="age" required="required">
+
+        <h3>Ваше имя</h3>
+        <input type="text" class="form" name="name" id="name">
+
+        <h3>Телефон*</h3>
+        <input type="tel" class="form" name="phone" id="selector" required="required">
+
+        <h3>E-mail*</h3>
+        <input type="email" class="form" name="mail" id="mail" required="required"><br><br>
+
+        <div style="text-align:left;display:inline-block;">
+            <input type="checkbox" class="form" id="privacy" name="agreement" value="privacy" required="required">
+            <label for="privacy">Я согласен с Пользовательским соглашением и обработкой данных</label><br>
+            <input type="checkbox" class="form" id="advertising" name="agreement" value="advertising">
+            <label for="advertising">Я хочу получать скидки на Выгул собак на указанную почту</label>
+        </div>
+
+        <p><strong>*</strong> – обязательно для заполнения</p>
+
+        <input type="submit">
+    </form>
+</section>
+
+<script src="https://unpkg.com/imask"></script>
+<script>
+    var element = document.getElementById('selector');
+    var maskOptions = {
+        mask: '+{995} 000-000-000',
+        lazy: false,
+    };
+    var mask = IMask(element, maskOptions);
+</script>
+
+<%- include('footer.html') -%>
