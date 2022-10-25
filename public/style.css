@@ -10,6 +10,7 @@ html {
     --secondary-background-color-rgba: 239, 233, 244;
     --button-color: #f76f8e;
     --button-color-hover: #faa4b8;
+    --select-color: #0a014f;
 }
 
 html[data-theme="dark"] {
@@ -19,6 +20,7 @@ html[data-theme="dark"] {
     --secondary-background-color-rgba: 47, 38, 118;
     --button-color: #925a67;
     --button-color-hover: #5f3a3d;
+    --select-color: #0a014f;
 }
 
 ::selection {
@@ -45,6 +47,25 @@ a {
     text-decoration: none;
 }
 
+a.logo:hover {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-background-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color); 
+    outline: none;
+    border-radius: 2rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: inline-block;
+}
+
 .btn {
     background-color: var(--button-color);
     border-radius: 1rem;
@@ -55,6 +76,11 @@ a {
 
 .btn:hover {
     background: var(--button-color-hover);
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    text-decoration: none;
 }
 
 .card {
@@ -211,13 +237,17 @@ nav {
     margin: 3rem 0;
 }
 
+.buy fieldset {
+    border:0 none;
+}
+
 .buy .form {
     border-color: var(--text-color);
     padding: 0.8rem;
     border-radius: 1rem;
 }
 
-.buy input[type="submit"] {
+.buy .submit-button {
     background-color: var(--button-color);
     border-radius: 2rem;
     padding: 1rem;
@@ -226,8 +256,27 @@ nav {
     transition: 0.5s;
 }
 
-.buy input[type="submit"]:hover {
+.buy .submit-button:hover {
     background: var(--button-color-hover);
+}
+
+.buy .step-button {
+    background-color: var(--secondary-background-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color); 
+    outline: none;
+    border-radius: 2rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    margin: 1rem 0.5rem;
+}
+
+.buy select {
+    color: var(--select-color);
+}
+
+.buy input {
+    margin-bottom: 1rem;
 }
 
 .buy input:focus {
@@ -240,10 +289,6 @@ nav {
 
 .buy input[type="checkbox"]:checked {
     accent-color: var(--button-color);
-}
-
-.buy select, .buy input {
-    color: #0a014f !important;
 }
 
 /* dogwalk page */
